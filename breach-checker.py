@@ -27,7 +27,7 @@ if len(sys.argv) > 1:
         response_dehash = requests.request("GET", url, headers=headers, params=dehash)
         parse_json = json.loads(response_dehash.text, object_pairs_hook=OrderedDict)
         dehashed = parse_json['found']
-        print("Password:" ,item['password']," || Decrypted: ", dehashed," || Sources:",item['sources'])
+        print("Hash: ",item['hash']," || Password:" ,item['password']," || Decrypted: ", dehashed," || Sources:",item['sources'])
         sleep(1)
 else:
     print("Usage: python breach-checker.py <username or email>")
